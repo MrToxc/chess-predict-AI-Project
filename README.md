@@ -14,7 +14,7 @@ Prediktor je natrénován na principech statického ohodnocení pozice (tzv. Sta
 * `crawler.py` – Skript pro stažení historických partií (PGN) přes veřejné API šachového serveru Chess.com. Udržuje logiku filtrace podle ELO ratingu.
 * `model.py` – Hlavní soubor umělé inteligence. Načítá pre-procesovaná data, dělí je na trénovací a testovací množiny, provádí standardizaci, spouští trénink neuronové sítě a ukládá hotové modely na disk.
 * `lib/` – Obsahuje jak extrakční "mozek", tak kompletní webové rozhraní.
-  * `extractor.py` – Parse skript s pomocí knihovny `python-chess`, který analyzuje šachovou pozici a vyrábí z ní 48 numerických input-features.
+  * `extractor.py` – Parse skript s pomocí knihovny `python-chess`, který analyzuje šachovou pozici a vyrábí z ní více než 50 numerických input-features.
   * `app.py` – Backend server postavený na frameworku Flask, který se startuje k provozu vizuální stránky.
 
 ## Jak projekt nainstalovat a spustit
