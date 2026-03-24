@@ -9,7 +9,7 @@ import requests
 
 MINIMUM_RATING = None  # Set to an integer (e.g., 850) to enforce a minimum rating
 MAXIMUM_RATING = None  # Set to an integer (e.g., 1800) to enforce a maximum rating
-TARGET_GAME_COUNT = 1000000
+TARGET_GAME_COUNT = 10000
 OUTPUT_FILE_PATH = os.path.join("data", "raw_games.json")
 STATE_FILE_PATH = os.path.join("data", "crawler_state.json")
 MAXIMUM_ARCHIVES_PER_PLAYER = 10

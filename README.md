@@ -11,10 +11,10 @@ Prediktor je natrénován na principech statického ohodnocení pozice (tzv. Sta
 
 ## Struktura složek
 
-* `crawler.py` – Skript pro stažení historických partií (PGN) přes veřejné API šachového serveru Chess.com. Udržuje logiku filtrace podle ELO ratingu.
+* `crawler.py` – Skript pro stažení historických partií (PGN) přes veřejné API šachového serveru Chess.com. Udržuje logiku filtrace podle ELO ratingu. Skript je plně **perzistentní**, dokáže ukládat svůj aktuální postup do `.json` záznamu a kdykoliv po přerušení navázat tam, kde naposledy skončil.
 * `model.py` – Hlavní soubor umělé inteligence. Načítá pre-procesovaná data, dělí je na trénovací a testovací množiny, provádí standardizaci, spouští trénink neuronové sítě a ukládá hotové modely na disk.
 * `lib/` – Obsahuje jak extrakční "mozek", tak kompletní webové rozhraní.
-  * `extractor.py` – Parse skript s pomocí knihovny `python-chess`, který analyzuje šachovou pozici a vyrábí z ní více než 50 numerických input-features.
+  * `extractor.py` – Parse skript s pomocí knihovny `python-chess`, který analyzuje šachovou pozici a vyrábí z ní podrobné šachové rysy. Skript podporuje zálohování rozpracovaného stavu po dávkách a ochranu proti zamrznutí.
   * `app.py` – Backend server postavený na frameworku Flask, který se startuje k provozu vizuální stránky.
 
 ## Jak projekt nainstalovat a spustit
@@ -53,4 +53,4 @@ Prediktor je natrénován na principech statického ohodnocení pozice (tzv. Sta
    cd lib
    python app.py
    ```
-   Přejděte do webového prohlížeče na adresu: **http://127.0.0.1:8080** a potáhněte figurkami pro otestování predikčního baru!
+   Přejděte do webového prohlížeče na adresu: **http://127.0.0.1:8080** a potáhněte figurkami! Můžete si zapnout funkci AI Asistenta (tzv. Ghost Piece) a sledovat vizuální stíny tahů přímo na šachovnici, doporučovaných modelem.
